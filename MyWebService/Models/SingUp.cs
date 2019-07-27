@@ -12,8 +12,8 @@ namespace MyWebService.Models
         public string Email { get; set; }
         public string CPF { get; set; }
         public string CNPJ { get; set; }
-        public int HomePhone { get; set; }
-        public int Phone { get; set; }
+        public string HomePhone { get; set; }
+        public string Phone { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
         public string ZipCode { get; set; }
@@ -24,7 +24,7 @@ namespace MyWebService.Models
 
         }
 
-        public SingUp(int id, string name, string email, string cpf, string cnpj, int homePhone, int phone, string username, string password, string zipCode, string number)
+        public SingUp(int id, string name, string email, string cpf, string cnpj, string homePhone, string phone, string username, string password, string zipCode, string number)
         {
             Id = id;
             Name = name;

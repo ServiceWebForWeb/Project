@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - MyWebService</title>
 
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
@@ -37,7 +39,7 @@
 
                 <div class="navbar-form navbar-right">
                     <button type="submit" class="btn btn-primary">Sing In</button>
-                    <a asp-area="" asp-controller="SingUps" asp-action="Index" type="button" class="btn btn-primary">Sing Up</a>
+                    <a asp-area="" asp-controller="SingUps" asp-action="Create" type="button" class="btn btn-primary">Sing Up</a>
                 </div>
             </div>
         </div>
@@ -54,7 +56,6 @@
     </div>
 
     <environment include="Development">
-        <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
     </environment>

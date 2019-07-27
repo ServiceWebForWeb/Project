@@ -220,4 +220,12 @@ function formata_cpf_cnpj(valor) {
     return formatado;
 }
 
+$('#contractCheck').click((event) => {
+    if (event.currentTarget.checked == true) {
+        $('.ModalSingUp').modal('show');
+        $('.modalTitle').html('Contract');
+        $('.modalBody').html('teste')
+    }
+});
+
 
