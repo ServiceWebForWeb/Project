@@ -9,22 +9,22 @@ using MyWebService.Models;
 
 namespace MyWebService.Controllers
 {
-    public class SingUpsController : Controller
+    public class signUpsController : Controller
     {
         private readonly MyWebServiceContext _context;
 
-        public SingUpsController(MyWebServiceContext context)
+        public signUpsController(MyWebServiceContext context)
         {
             _context = context;
         }
 
-        // GET: SingUps
+        // GET: signUps
         public async Task<IActionResult> Index()
         {
             return View();
         }
 
-        // GET: SingUps/Details/5
+        // GET: signUps/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -32,39 +32,39 @@ namespace MyWebService.Controllers
                 return NotFound();
             }
 
-            var singUp = await _context.SingUp
+            var signUp = await _context.SignUp
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (singUp == null)
+            if (signUp == null)
             {
                 return NotFound();
             }
 
-            return View(singUp);
+            return View(signUp);
         }
 
-        // GET: SingUps/Create
+        // GET: signUps/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: SingUps/Create
+        // POST: signUps/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Email,CPF,CNPJ,HomePhone,Phone,Username,Password,ZipCode,Number")] SingUp singUp)
+        public async Task<IActionResult> Create([Bind("Id,Name,Email,CPF,CNPJ,HomePhone,Phone,Username,Password,ZipCode,Number")] SignUp signUp)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(singUp);
+                _context.Add(signUp);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(singUp);
+            return View(signUp);
         }
 
-        // GET: SingUps/Edit/5
+        // GET: signUps/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -72,22 +72,22 @@ namespace MyWebService.Controllers
                 return NotFound();
             }
 
-            var singUp = await _context.SingUp.FindAsync(id);
-            if (singUp == null)
+            var signUp = await _context.SignUp.FindAsync(id);
+            if (signUp == null)
             {
                 return NotFound();
             }
-            return View(singUp);
+            return View(signUp);
         }
 
-        // POST: SingUps/Edit/5
+        // POST: signUps/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id")] SingUp singUp)
+        public async Task<IActionResult> Edit(int id, [Bind("Id")] SignUp signUp)
         {
-            if (id != singUp.Id)
+            if (id != signUp.Id)
             {
                 return NotFound();
             }
@@ -96,12 +96,12 @@ namespace MyWebService.Controllers
             {
                 try
                 {
-                    _context.Update(singUp);
+                    _context.Update(signUp);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!SingUpExists(singUp.Id))
+                    if (!signUpExists(signUp.Id))
                     {
                         return NotFound();
                     }
@@ -112,10 +112,10 @@ namespace MyWebService.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(singUp);
+            return View(signUp);
         }
 
-        // GET: SingUps/Delete/5
+        // GET: signUps/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -123,30 +123,30 @@ namespace MyWebService.Controllers
                 return NotFound();
             }
 
-            var singUp = await _context.SingUp
+            var signUp = await _context.SignUp
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (singUp == null)
+            if (signUp == null)
             {
                 return NotFound();
             }
 
-            return View(singUp);
+            return View(signUp);
         }
 
-        // POST: SingUps/Delete/5
+        // POST: signUps/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var singUp = await _context.SingUp.FindAsync(id);
-            _context.SingUp.Remove(singUp);
+            var signUp = await _context.SignUp.FindAsync(id);
+            _context.SignUp.Remove(signUp);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool SingUpExists(int id)
+        private bool signUpExists(int id)
         {
-            return _context.SingUp.Any(e => e.Id == id);
+            return _context.SignUp.Any(e => e.Id == id);
         }
     }
 }

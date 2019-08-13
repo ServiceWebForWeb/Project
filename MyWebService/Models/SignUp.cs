@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace MyWebService.Models
 {
-    public class SingUp
+    public class SignUp
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -19,12 +19,12 @@ namespace MyWebService.Models
         public string ZipCode { get; set; }
         public string Number { get; set; }
 
-        public SingUp()
+        public SignUp()
         {
 
         }
 
-        public SingUp(int id, string name, string email, string cpf, string cnpj, string homePhone, string phone, string username, string password, string zipCode, string number)
+        public SignUp(int id, string name, string email, string cpf, string cnpj, string homePhone, string phone, string username, string password, string zipCode, string number)
         {
             Id = id;
             Name = name;

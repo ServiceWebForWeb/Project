@@ -9,7 +9,7 @@ namespace MyWebService.Migrations
 {
     [DbContext(typeof(MyWebServiceContext))]
     [Migration("20190727144802_SingUp")]
-    partial class SingUp
+    partial class SignUp
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

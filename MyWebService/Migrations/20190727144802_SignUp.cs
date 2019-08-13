@@ -3,12 +3,12 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace MyWebService.Migrations
 {
-    public partial class SingUp : Migration
+    public partial class SignUp : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "SingUp",
+                name: "SignUp",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -26,14 +26,14 @@ namespace MyWebService.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_SingUp", x => x.Id);
+                    table.PrimaryKey("PK_SignUp", x => x.Id);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "SingUp");
+                name: "SignUp");
         }
     }
 }

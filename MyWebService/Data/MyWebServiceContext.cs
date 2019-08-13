@@ -16,6 +16,6 @@ namespace MyWebService.Models
 
         public DbSet<MyWebService.Models.Projetos> Projetos { get; set; }
 
-        public DbSet<MyWebService.Models.SingUp> SingUp { get; set; }
+        public DbSet<MyWebService.Models.SignUp> SignUp { get; set; }
     }
 }
