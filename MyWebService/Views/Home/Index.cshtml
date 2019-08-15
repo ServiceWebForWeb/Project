@@ -1,115 +1,105 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+	ViewData["Title"] = "Home Page";
 }
 
+<!--
 <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
-    <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner" role="listbox">
-        <div class="item active">
-            <img src="~/images/banner1.svg" alt="ASP.NET" class="img-responsive" />
-            <div class="carousel-caption" role="option">
-                <p>
-                    Learn how to build ASP.NET apps that can run anywhere.
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkID=525028&clcid=0x409">
-                        Learn More
-                    </a>
-                </p>
-            </div>
-        </div>
-        <div class="item">
-            <img src="~/images/banner2.svg" alt="Visual Studio" class="img-responsive" />
-            <div class="carousel-caption" role="option">
-                <p>
-                    There are powerful new features in Visual Studio for building modern web apps.
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkID=525030&clcid=0x409">
-                        Learn More
-                    </a>
-                </p>
-            </div>
-        </div>
-        <div class="item">
-            <img src="~/images/banner3.svg" alt="Microsoft Azure" class="img-responsive" />
-            <div class="carousel-caption" role="option">
-                <p>
-                    Learn how Microsoft's Azure cloud platform allows you to build, deploy, and scale web apps.
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkID=525027&clcid=0x409">
-                        Learn More
-                    </a>
-                </p>
-            </div>
-        </div>
-    </div>
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
-</div>
+	<ol class="carousel-indicators">
+		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+		<li data-target="#myCarousel" data-slide-to="1"></li>
+		<li data-target="#myCarousel" data-slide-to="2"></li>
+	</ol>
+	<div class="carousel-inner" role="listbox">
+		<div class="item active">
+			<img src="~/images/banner1.svg" alt="ASP.NET" class="img-responsive" />
+			<div class="carousel-caption" role="option">
+				<p>
+					Learn how to build ASP.NET apps that can run anywhere.
+					<a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkID=525028&clcid=0x409">
+						Learn More
+					</a>
+				</p>
+			</div>
+		</div>
+		<div class="item">
+			<img src="~/images/banner2.svg" alt="Visual Studio" class="img-responsive" />
+			<div class="carousel-caption" role="option">
+				<p>
+					There are powerful new features in Visual Studio for building modern web apps.
+					<a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkID=525030&clcid=0x409">
+						Learn More
+					</a>
+				</p>
+			</div>
+		</div>
+		<div class="item">
+			<img src="~/images/banner3.svg" alt="Microsoft Azure" class="img-responsive" />
+			<div class="carousel-caption" role="option">
+				<p>
+					Learn how Microsoft's Azure cloud platform allows you to build, deploy, and scale web apps.
+					<a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkID=525027&clcid=0x409">
+						Learn More
+					</a>
+				</p>
+			</div>
+		</div>
+	</div>
+	<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+		<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+		<span class="sr-only">Previous</span>
+	</a>
+	<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+		<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+		<span class="sr-only">Next</span>
+	</a>
+</div>-->
 
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="card mx-4">
-                    <div class="card-body p-4">
-                        <h1>Register</h1>
-                        <p class="text-muted">Create your account</p>
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">
-                                    <i class="icon-user"></i>
-                                </span>
-                            </div>
-                            <input class="form-control" type="text" placeholder="Username">
-                        </div>
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"></span>
-                            </div>
-                            <input class="form-control" type="text" placeholder="Email">
-                        </div>
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">
-                                    <i class="icon-lock"></i>
-                                </span>
-                            </div>
-                            <input class="form-control" type="password" placeholder="Password">
-                        </div>
-                        <div class="input-group mb-4">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">
-                                    <i class="icon-lock"></i>
-                                </span>
-                            </div>
-                            <input class="form-control" type="password" placeholder="Repeat password">
-                        </div>
-                        <button class="btn btn-block btn-success" type="button">Create Account</button>
-                    </div>
-                    <div class="card-footer p-4">
-                        <div class="row">
-                            <div class="col-6">
-                                <button class="btn btn-block btn-facebook" type="button">
-                                    <span>facebook</span>
-                                </button>
-                            </div>
-                            <div class="col-6">
-                                <button class="btn btn-block btn-twitter" type="button">
-                                    <span>twitter</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- CoreUI and necessary plugins-->
+	<br />
 
-
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-md-8">
+				<div class="card-group">
+					<div class="card p-4">
+						<div class="card-body">
+							<h1>Login</h1>
+							<p class="text-muted">Sign In to your account</p>
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text">
+										<i class="icon-user"></i>
+									</span>
+								</div>
+								<input class="form-control" type="text" placeholder="Username">
+							</div>
+							<div class="input-group mb-4">
+								<div class="input-group-prepend">
+									<span class="input-group-text">
+										<i class="icon-lock"></i>
+									</span>
+								</div>
+								<input class="form-control" type="password" placeholder="Password">
+							</div>
+							<div class="row">
+								<div class="col-6">
+									<button class="btn btn-primary px-4" type="button">Login</button>
+								</div>
+								<div class="col-6 text-right">
+									<button class="btn btn-link px-0" type="button">Forgot password?</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card text-white bg-primary py-5 d-md-down-none" style="width:44%">
+						<div class="card-body text-center">
+							<div>
+								<h2>Sign up</h2>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+								<a asp-controller="SignUps" asp-action="Create" class="btn btn-primary active mt-3" type="button">Register Now!</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>

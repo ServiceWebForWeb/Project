@@ -1,160 +1,80 @@
 ﻿@model MyWebService.Models.SignUp
 
 @{
-    ViewData["Title"] = "Cadastro";
+    ViewData["Title"] = "Register";
 }
 
 <div class="container">
 
     <h2>@ViewData["Title"]</h2>
 
+<form asp-action="Create">
+	<div class="form-row">
+		<div class="col-md-4 mb-3">
+			<label asp-for="Name" for="validationServer01">Complete name</label>
+			<input asp-for="Name" type="text" class="form-control is-valid" id="completeName" placeholder="Complete name" required>
+			<div class="valid-feedback">
+				Looks good!
+			</div>
+			<div class="invalid-feedback">
+				Please choose a username.
+			</div>
+		</div>
+		<div class="col-md-4 mb-3">
+			<label asp-for="Username" for="validationServerUsername">Username</label>
+			<div class="input-group">
+				<input asp-for="Username" type="text" class="form-control is-invalid" id="validationServerUsername" placeholder="Username" aria-describedby="inputGroupPrepend3" required>
+				<div class="invalid-feedback">
+					Please choose a username.
+				</div>
+			</div>
+		</div>
 
-    <form asp-action="Create">
-        <div class="row">
-            <div class="form-row">
-                <div class="form-group col-md-4">
-                    <label asp-for="Name" for="inputName">Name</label>
-                    <input asp-for="Name" type="text" class="form-control" id="name" placeholder="Name Complete">
-                </div>
-                <div class="form-group col-md-4">
-                    <label asp-for="Email" for="inputEmail4">Email</label>
-                    <input asp-for="Email" type="email" class="form-control email" id="inputEmail4" placeholder="Email">
-                </div>
-            </div>
-        </div>
+		<div class="col-md-4 mb-3">
+			<label asp-for="Email" for="validationServerUsername">E-mail</label>
+			<div class="input-group">
+				<input asp-for="Email" type="email" class="form-control is-invalid" id="email" placeholder="E-mail" aria-describedby="inputGroupPrepend3" required>
+				<div class="invalid-feedback">
+					Please choose a username.
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="form-row">
+		<div class="col-md-3 mb-3">
+			<label asp-for="ZipCode" for="validationServer05">Zip</label>
+			<input asp-for="ZipCode" type="text" class="form-control is-invalid" id="validationServer05" placeholder="Zip" required>
+			<div class="invalid-feedback">
+				Please provide a valid zip.
+			</div>
+		</div>
 
-        <div class="row">
-            <div class="form-row">
-                <div class="form-group col-md-4">
-                    <label asp-for="CPF" for="inputCPF">CPF</label>
-                    <input asp-for="CPF" type="text" class="form-control cpf" id="CPF" placeholder="CPF">
-                </div>
-                <div class="form-group col-md-4">
-                    <label asp-for="CNPJ" for="inputCNPJ">CNPJ</label>
-                    <input asp-for="CNPJ" type="text" class="form-control cnpj" id="inputCNPJ" placeholder="CNPJ">
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="form-group col-md-2">
-                <label asp-for="HomePhone" for="inputHomePhone">Home phone</label>
-                <input asp-for="HomePhone" type="text" class="form-control" id="inputHomePhone" />
-            </div>
-
-            <div class="form-group col-md-2">
-                <label asp-for="Phone" for="inputPhone">Phone</label>
-                <input asp-for="Phone" type="text" class="form-control" id="inputPhone" />
-            </div>
-        </div>
-
-        <hr />
-
-        <div class="row">
-            <div class="form-group col-md-4">
-                <label asp-for="Username" for="inputUsername">Username</label>
-                <input asp-for="Username" type="text" class="form-control" id="inputUsername" placeholder="inputUsername">
-            </div>
-        </div>
-
-
-        <div class="row">
-            <div class="form-row">
-                <div class="form-group col-md-4">
-                    <label asp-for="Password" for="inputPassword">Password</label>
-                    <input asp-for="Password" type="password" class="form-control" id="Password" placeholder="Password">
-                </div>
-                <div class="form-group col-md-4">
-                    <label for="inputConfirmPassword">Confirm Password</label>
-                    <input type="password" class="form-control" id="ConfirmPassword" placeholder="Confirm Password">
-                </div>
-            </div>
-        </div>
-
-        <hr />
-
-        <div class="row">
-            <div class="form-row">
-                <div class="form-group col-md-2">
-                    <label asp-for="ZipCode" for="inputZip">Zip Code</label>
-                    <input asp-for="ZipCode" type="text" class="form-control zipCode" id="inputZip" onblur="pesquisacep(this.value)">
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="form-row">
-                <div class="form-group col-md-4">
-                    <label for="inputAddress">Address</label>
-                    <input type="text" class="form-control" id="inputAddress" placeholder="" disabled />
-                </div>
-
-                <div class="form-group col-md-4">
-                    <label for="inputCity">City</label>
-                    <input type="text" class="form-control" id="inputCity" disabled />
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="form-group col-md-2">
-                <label for="inputState">State</label>
-                <input type="text" class="form-control" id="inputState" disabled />
-            </div>
-
-            <div class="form-group col-md-2">
-                <label asp-for="Number" for="inputNumber">Number</label>
-                <input asp-for="Number" type="text" class="form-control" id="inputNumber" />
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="form-group">
-                <div class="col-md-2">
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" name="contractCheck" id="contractCheck">
-                        <label class="form-check-label" for="contractCheck">
-                            Contract
-                        </label>
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" name="programmingCheck" id="programmingCheck">
-                        <label class="form-check-label" for="programmingCheck">
-                            Type layouts explications
-                        </label>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="form-group text-right">
-                <div class="col-md-8">
-                    <button type="submit" class="btn btn-primary" value="Index">Submit</button>
-                </div>
-            </div>
-        </div>
-    </form>
-</div>
-
-<div class="modal fade ModalSingUp" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title modalTitle">Modal title</h4>
-            </div>
-            <div class="modal-body modalBody">
-                <p>One fine body&hellip;</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">I disagree</button>
-                <button type="button" class="btn btn-primary">Accept</button>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+		<div class="col-md-6 mb-3">
+			<label for="validationServer03">City</label>
+			<input type="text" class="form-control is-invalid" id="validationServer03" placeholder="City" required>
+			<div class="invalid-feedback">
+				Please provide a valid city.
+			</div>
+		</div>
+		<div class="col-md-3 mb-3">
+			<label for="validationServer04">State</label>
+			<input type="text" class="form-control is-invalid" id="validationServer04" placeholder="State" required>
+			<div class="invalid-feedback">
+				Please provide a valid state.
+			</div>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="form-check">
+			<input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" required>
+			<label class="form-check-label" for="invalidCheck3">
+				Agree to terms and conditions
+			</label>
+			<div class="invalid-feedback">
+				You must agree before submitting.
+			</div>
+		</div>
+	</div>
+	<button class="btn btn-primary" type="submit" value="Index">Submit form</button>
+</form>
 <script src="~/js/SingUp/SingUp.js"></script>
